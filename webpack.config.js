@@ -1,43 +1,45 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-let DashboardPlugin = require('webpack-dashboard/plugin');
+const DashboardPlugin = require('webpack-dashboard/plugin');
+const merge = require('webpack-merge');
+const parts = require('./webpack.parts');
 
 const PATHS = {
 	app: path.join(__dirname, 'app'),
 	build: path.join(__dirname, 'build'),
 };
 
-const commonConfig = {
+const commonConfig = merge([
+  {
 	entry: {
 		app: PATHS.app,
 	},
-	
 	output: {
 		path: PATHS.build,
 		filename: '[name].js',
 	},
-	
 	plugins: [
 		new HtmlWebpackPlugin({
 			title: 'Webpack demo',
 		}),
 		new DashboardPlugin()
 	],
-};
+},
+  parts.lintJavaScript({ include: PATHS.app }),
+]);
 
-const productionConfig = () => commonConfig;
+const productionConfig = merge([]);
 
-const developmentConfig = () => {
-	const config = {
-		devServer: {
+const developmentConfig = merge([
+		parts.devServer({
 			
 			// Enable history API fallback so HTML5 History API based
 			// routing works. Good for complex setups.
-			historyApiFallback: true,
+			// historyApiFallback: true,
 			
 			// Display only errors to reduce the amount of output.
-			stats: 'errors-only',
+			// stats: 'errors-only',
 			
 			// Parse host and port from env to allow customization.
 			//
@@ -54,47 +56,12 @@ const developmentConfig = () => {
 			// 	errors: true,
 			// 	warnings: true,
 			// }
-		},
-		module: {
-			rules: [
-				{
-					test: /\.js$/,
-					enforce: 'pre',
-					
-					loader: 'eslint-loader',
-					options: {
-						emitWarning: true,
-					}
-				}
-			]
-		},
-		// plugins: [
-		// 	new webpack.LoaderOptionsPlugin({ options: {
-		// 		eslint: {
-		// 		// Fail only on errors failOnWarning: false, failOnError: true,
-		// 			// Toggle autofix
-		// 			fix: false,
-		// 			// Output to Jenkins compatible XML
-		// 			outputReport: {
-		// 				filePath: 'checkstyle.xml',
-		// 				formatter: require('eslint/lib/formatters/checkstyle'),
-		// 			},
-		// 		}}})
-		//
-		// ],
-	};
-
-	return Object.assign(
-		{},
-		commonConfig,
-		config
-	);
-};
-
+		}),
+  ]);
 
 module.exports = (env) => {
-	if(env === 'production') {
-		return productionConfig();
-	}
-	return developmentConfig();
+if (env === 'production') {
+  return merge(commonConfig, productionConfig);
+}
+return merge(commonConfig, developmentConfig);
 };
