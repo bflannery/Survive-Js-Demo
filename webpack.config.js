@@ -3,6 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
 const merge = require('webpack-merge');
+const glob = require('glob');
 const parts = require('./webpack.parts');
 
 const PATHS = {
@@ -33,6 +34,9 @@ const productionConfig = merge([
   parts.extractCSS({
     use: ['css-loader', parts.autoprefix()],
   }),
+  parts.purifyCSS({
+    paths: glob.sync(`${PATHS.app}/**/*.js`, { nodir: true }),
+  })
 ]);
 
 const developmentConfig = merge([

@@ -1,4 +1,6 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const PurifyCSSPlugin = require('purifycss-webpack');
+
 
 exports.devServer = ({ host, port } = {}) => ({
   devServer: {
@@ -7,8 +9,8 @@ exports.devServer = ({ host, port } = {}) => ({
     host, //Defaults to `localhost`
     port, //Defaults to 8080
     overlay: {
-      errors: true,
-      warnings: true,
+      errors: false,
+      warnings: false,
     },
   },
 });
@@ -75,3 +77,10 @@ exports.autoprefix = () => ({
     ]),
   },
 });
+
+
+exports.purifyCSS = ({ paths }) => ({
+  plugins: [
+    new PurifyCSSPlugin({ paths }),
+  ]
+})
