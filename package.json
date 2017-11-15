@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "lint:style": "stylelint app/**/*.css",
     "start": "webpack-dashboard -- nodemon --watch webpack.config.js --exec \"webpack-dev-server --env development\"",
     "build": "webpack --env production",
     "lint:js": "eslint app/ webpack.*.ja --cache"
@@ -23,6 +24,7 @@
     "purify-css": "^1.2.5",
     "purifycss-webpack": "^0.7.0",
     "style-loader": "^0.19.0",
+    "stylelint": "^8.2.0",
     "webpack-dashboard": "^1.0.2",
     "webpack-dev-server": "^2.9.4",
     "webpack-merge": "^4.1.1"

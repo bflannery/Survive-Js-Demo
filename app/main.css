@@ -1,5 +1,6 @@
 body {
-    background: cornsilk;
+    /*background-color: #EFEFEF;*/
+    background-color: cornsilk;
     display: flex;
 }
 
