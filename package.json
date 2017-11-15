@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dashboard -- nodemon --watch webpack.config.js --exec \"webpack-dev-server --env production\"",
+    "start": "webpack-dashboard -- nodemon --watch webpack.config.js --exec \"webpack-dev-server --env development\"",
     "build": "webpack --env production",
     "lint:js": "eslint app/ webpack.*.ja --cache"
   },
@@ -23,6 +23,7 @@
     "webpack-merge": "^4.1.1"
   },
   "dependencies": {
+    "extract-text-webpack-plugin": "^2.1.2",
     "webpack": "^2.2.1"
   }
 }
