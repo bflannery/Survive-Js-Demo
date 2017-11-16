@@ -34,6 +34,7 @@ const commonConfig = merge([
       name: '[name].[ext]',
     },
   }),
+  parts.loadJavascript({ include: PATHS.app }),
 ]);
 
 const productionConfig = merge([
@@ -81,8 +82,8 @@ const developmentConfig = merge([
   ]);
 
 module.exports = (env) => {
-if (env === 'production') {
-  return merge(commonConfig, productionConfig);
-}
-return merge(commonConfig, developmentConfig);
+  if (env === 'production') {
+    return merge(commonConfig, productionConfig);
+    }
+  return merge(commonConfig, developmentConfig);
 };
