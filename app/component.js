@@ -1,17 +1,7 @@
-// export default (text = 'Hello World') => {
-//   const element = document.createElement('div');
-//
-//   element.innerHTML = text;
-//   element.className = styles.redButton;
-//
-//   return element;
-// };
 
-module.exports = () => {
+export default (text = 'Hello world') => {
   const element = document.createElement('div');
-  
-  element.className = 'pure-button';
-  element.innerHTML = 'Hello World';
-  
+  element.className = 'fa fa-hand-spock-o fa-1g';
+  element.innerHTML = text;
   return element;
 };

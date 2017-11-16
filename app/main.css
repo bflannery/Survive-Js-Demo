@@ -1,6 +1,8 @@
 body {
-    /*background-color: #EFEFEF;*/
-    background-color: cornsilk;
+    background: cornsilk;
+    background-image: url('./big.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
     display: flex;
 }
 

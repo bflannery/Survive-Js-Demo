@@ -99,9 +99,55 @@ exports.lintCSS = ({ include, exclude }) => ({
           plugins: () => ([
             require('stylelint')(),
           ])
-        }
-        
-      }
-    ]
-  }
+        },
+      },
+    ],
+  },
+});
+
+exports.loadImages = ({ include, exclude, options } = {}) => ({
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpg|svg)$/,
+        include,
+        exclude,
+    
+        use: {
+          loader: 'url-loader',
+          options,
+        },
+      },
+      {
+        // Match woff2 in addition to patterns like .woff?v=1.1.1.
+        test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader',
+        options: {
+          // Limit at 50k. Above that it emits separate files
+          limit: 50000,
+          // url-loader sets mimetype if it's passed.
+          // Without this it derives it from the file extension mimetype: 'application/font-woff',
+          // Output below fonts directory
+          name: './fonts/[name].[ext]',
+        },
+      },
+    ],
+  },
+});
+
+exports.loadFonts = ({ include, exclude, options} = {}) => ({
+  module: {
+    rules: [
+      {
+        // Capture eot, ttf, woff, and woff2
+        test: /\.(eot|ttf|woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+        include,
+        exclude,
+        use: {
+          loader: 'file-loader',
+          options,
+        },
+      },
+    ],
+  },
 });
