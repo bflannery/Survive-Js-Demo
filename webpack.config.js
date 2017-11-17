@@ -1,4 +1,4 @@
-const webpack = require('webpack');
+
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
@@ -53,6 +53,16 @@ const productionConfig = merge([
       name: '[name].[ext]',
     },
   }),
+  parts.extractBundles([
+    {
+      name: 'vendor',
+      minChunks: ({ resource }) => (
+        resource &&
+        resource.indexOf('node_modules') >= 0 &&
+        resource.match(/\.js$/)
+      ),
+    },
+  ]),
 ]);
 
 const developmentConfig = merge([

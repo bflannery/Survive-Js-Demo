@@ -38,6 +38,7 @@
     "extract-text-webpack-plugin": "^2.1.2",
     "font-awesome": "^4.7.0",
     "purecss": "^1.0.0",
+    "react": "^16.1.1",
     "webpack": "^2.2.1"
   }
 }
