@@ -1,3 +1,4 @@
+/*! a5f89c8 */
 webpackJsonp([1],{
 
 /***/ 16:
@@ -39,34 +40,32 @@ document.body.appendChild(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__com
 
 "use strict";
 
-// export default (text = 'Hello world') => {
-//   const element = document.createElement('div');
-//
-//   element.className = 'fa fa-hand-spock-o fa-1g';
-//   element.innerHTML = text;
-//   element.onclick = () => {
-//     import('./lazy').then((lazy) => {
-//       element.textContent = lazy.default;
-//     }).catch((err) => {
-//       console.error(err);
-//     });
-//   };
-//
-//   return element;
-// };
-
-
 /* harmony default export */ __webpack_exports__["a"] = function () {
+  var text = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Hello world';
+
   var element = document.createElement('div');
-  element.className = 'pure-button';
-  element.innerHTML = 'Hello world';
+
+  element.className = 'fa fa-hand-spock-o fa-1g';
+  element.innerHTML = text;
   element.onclick = function () {
-    __webpack_require__.e/* require.ensure */(0).then((function (require) {
-      element.textContent = __webpack_require__(/*! ./lazy */ 17).default;
-    }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+    __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, /*! ./lazy */ 17)).then(function (lazy) {
+      element.textContent = lazy.default;
+    }).catch(function (err) {
+      console.error(err);
+    });
   };
+
   return element;
 };
+
+// export default () => {
+//   const element = document.createElement('div');
+//   element.className = 'pure-button';
+//   element.innerHTML = 'Hello world';
+//   element.onclick = () => {
+//     require.ensure([], (require) => { element.textContent = require('./lazy').default;
+//     }); };
+//   return element; };
 
 /***/ }),
 

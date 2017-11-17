@@ -6,11 +6,17 @@ const merge = require('webpack-merge');
 const glob = require('glob');
 const parts = require('./webpack.parts');
 
+//
+// BUNDLE PATHS
+//
 const PATHS = {
 	app: path.join(__dirname, 'app'),
 	build: path.join(__dirname, 'build'),
 };
 
+//
+// COMMON CONFIGS
+//
 const commonConfig = merge([
   {
 	entry: {
@@ -37,7 +43,11 @@ const commonConfig = merge([
   parts.loadJavascript({ include: PATHS.app }),
 ]);
 
+//
+// PRODUCTION CONFIGS
+//
 const productionConfig = merge([
+  parts.cleanBuildDirectory(PATHS.build),
   parts.generateSourceMaps({
     type: 'source-map'
   }),
@@ -63,8 +73,12 @@ const productionConfig = merge([
       ),
     },
   ]),
+  parts.attachRevision(),
 ]);
 
+//
+// DEV CONFIGS
+//
 const developmentConfig = merge([
   {
     output: {
@@ -73,23 +87,8 @@ const developmentConfig = merge([
   },
   parts.generateSourceMaps({ type: 'cheap-module-eval-source-map' }),
   parts.devServer({
-    // Enable history API fallback so HTML5 History API based
-    // routing works. Good for complex setups.
-    // historyApiFallback: true,
-    
-    // Display only errors to reduce the amount of output.
-    // stats: 'errors-only',
-    
-    // Parse host and port from env to allow customization.
-    //
-    // If you use Docker, Vagrant or Cloud9, set
-    // host: options.host || '0.0.0.0';
-    //
-    // 0.0.0.0 is available to all network devices
-    // unlike default `localhost`.
     host: process.env.HOST, // Defaults to `localhost`
     port: process.env.PORT, // Defaults to 8080
-    
     // overlay: true is equivalent
     // overlay: {
     // 	errors: true,
