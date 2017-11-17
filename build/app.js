@@ -1,4 +1,4 @@
-webpackJsonp([0],{
+webpackJsonp([1],{
 
 /***/ 16:
 /* unknown exports provided */
@@ -39,12 +39,32 @@ document.body.appendChild(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__com
 
 "use strict";
 
-/* harmony default export */ __webpack_exports__["a"] = function () {
-  var text = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Hello world';
+// export default (text = 'Hello world') => {
+//   const element = document.createElement('div');
+//
+//   element.className = 'fa fa-hand-spock-o fa-1g';
+//   element.innerHTML = text;
+//   element.onclick = () => {
+//     import('./lazy').then((lazy) => {
+//       element.textContent = lazy.default;
+//     }).catch((err) => {
+//       console.error(err);
+//     });
+//   };
+//
+//   return element;
+// };
 
+
+/* harmony default export */ __webpack_exports__["a"] = function () {
   var element = document.createElement('div');
-  element.className = 'fa fa-hand-spock-o fa-1g';
-  element.innerHTML = text;
+  element.className = 'pure-button';
+  element.innerHTML = 'Hello world';
+  element.onclick = function () {
+    __webpack_require__.e/* require.ensure */(0).then((function (require) {
+      element.textContent = __webpack_require__(/*! ./lazy */ 17).default;
+    }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+  };
   return element;
 };
 
