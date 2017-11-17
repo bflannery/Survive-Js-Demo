@@ -38,6 +38,9 @@ const commonConfig = merge([
 ]);
 
 const productionConfig = merge([
+  parts.generateSourceMaps({
+    type: 'source-map'
+  }),
   parts.extractCSS({
     use: ['css-loader', parts.autoprefix()],
   }),
@@ -53,6 +56,12 @@ const productionConfig = merge([
 ]);
 
 const developmentConfig = merge([
+  {
+    output: {
+      devtoolModuleFilenameTemplate: 'webpack:///[absolute-resource-path]',
+    },
+  },
+  parts.generateSourceMaps({ type: 'cheap-module-eval-source-map' }),
   parts.devServer({
     // Enable history API fallback so HTML5 History API based
     // routing works. Good for complex setups.
