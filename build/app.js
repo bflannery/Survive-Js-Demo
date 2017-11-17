@@ -1,106 +1,18 @@
-/*! a5f89c8 */
-webpackJsonp([1],{
-
-/***/ 16:
-/* unknown exports provided */
-/* all exports used */
-/*!**********************!*\
+/*! e481c8f */
+webpackJsonp([1],{16:/*!**********************!*\
   !*** ./app/index.js ***!
   \**********************/
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(/*! react */ 10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_font_awesome_css_font_awesome_css__ = __webpack_require__(/*! font-awesome/css/font-awesome.css */ 7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_font_awesome_css_font_awesome_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_font_awesome_css_font_awesome_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_purecss__ = __webpack_require__(/*! purecss */ 9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_purecss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_purecss__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__main_css__ = __webpack_require__(/*! ./main.css */ 8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__main_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__main_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__component__ = __webpack_require__(/*! ./component */ 6);
-
-
-
-
-
-
-document.body.appendChild(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__component__["a" /* default */])());
-
-/***/ }),
-
-/***/ 6:
-/* exports provided: default */
-/* exports used: default */
-/*!**************************!*\
+function(n,e,t){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var o=t(/*! react */10),c=(t.n(o),t(/*! font-awesome/css/font-awesome.css */7)),i=(t.n(c),t(/*! purecss */9)),u=(t.n(i),t(/*! ./main.css */8)),a=(t.n(u),t(/*! ./component */6));document.body.appendChild(t.i(a.a)())},6:/*!**************************!*\
   !*** ./app/component.js ***!
   \**************************/
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-/* harmony default export */ __webpack_exports__["a"] = function () {
-  var text = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Hello world';
-
-  var element = document.createElement('div');
-
-  element.className = 'fa fa-hand-spock-o fa-1g';
-  element.innerHTML = text;
-  element.onclick = function () {
-    __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, /*! ./lazy */ 17)).then(function (lazy) {
-      element.textContent = lazy.default;
-    }).catch(function (err) {
-      console.error(err);
-    });
-  };
-
-  return element;
-};
-
-// export default () => {
-//   const element = document.createElement('div');
-//   element.className = 'pure-button';
-//   element.innerHTML = 'Hello world';
-//   element.onclick = () => {
-//     require.ensure([], (require) => { element.textContent = require('./lazy').default;
-//     }); };
-//   return element; };
-
-/***/ }),
-
-/***/ 7:
-/* unknown exports provided */
-/*!*********************************************!*\
+function(n,e,t){"use strict";e.a=function(){var n=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"Hello world",e=document.createElement("div");return e.className="fa fa-hand-spock-o fa-1g",e.innerHTML=n,e.onclick=function(){t.e(0).then(t.bind(null,/*! ./lazy */17)).then(function(n){e.textContent=n.default}).catch(function(n){console.error(n)})},e}},7:/*!*********************************************!*\
   !*** ./~/font-awesome/css/font-awesome.css ***!
   \*********************************************/
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 8:
-/* unknown exports provided */
-/*!**********************!*\
+function(n,e){},8:/*!**********************!*\
   !*** ./app/main.css ***!
   \**********************/
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 9:
-/* unknown exports provided */
-/*!**************************************!*\
+function(n,e){},9:/*!**************************************!*\
   !*** ./~/purecss/build/pure-min.css ***!
   \**************************************/
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ })
-
-},[16]);
+function(n,e){}},[16]);
 //# sourceMappingURL=app.js.map

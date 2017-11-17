@@ -1,8 +1,5 @@
 body {
     background: cornsilk;
-    /*background-image: url('./big.jpg');*/
-    background-repeat: no-repeat;
-    background-position: center;
     display: flex;
 }
 

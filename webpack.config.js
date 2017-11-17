@@ -47,7 +47,34 @@ const commonConfig = merge([
 // PRODUCTION CONFIGS
 //
 const productionConfig = merge([
-  parts.cleanBuildDirectory(PATHS.build),
+  {
+    performance: {
+      hints: 'warning',
+      maxEntrypointSize: 100000, // in bytes
+      maxAssetSize: 450000, // in bytes
+    },
+  },
+  parts.clean(PATHS.build),
+  parts.minifyJavaScript(),
+  parts.minifyCSS({
+    options: {
+      discardComments: {
+        removeAll: true,
+      },
+      safe: true,
+    }
+  }),
+  parts.extractBundles([
+    {
+      name: 'vendor',
+      minChunks: ({ resource }) => (
+        resource &&
+        resource.indexOf('node_modules') >= 0 &&
+        resource.match(/\.js$/)
+      ),
+    },
+  ]),
+  parts.attachRevision(),
   parts.generateSourceMaps({
     type: 'source-map'
   }),
@@ -63,17 +90,6 @@ const productionConfig = merge([
       name: '[name].[ext]',
     },
   }),
-  parts.extractBundles([
-    {
-      name: 'vendor',
-      minChunks: ({ resource }) => (
-        resource &&
-        resource.indexOf('node_modules') >= 0 &&
-        resource.match(/\.js$/)
-      ),
-    },
-  ]),
-  parts.attachRevision(),
 ]);
 
 //
@@ -105,3 +121,4 @@ module.exports = (env) => {
     }
   return merge(commonConfig, developmentConfig);
 };
+
