@@ -7,6 +7,35 @@ const UglifyWebpackPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const cssnano = require('cssnano');
 
+exports.minifyCSS = ({ options }) => ({
+  plugins: [
+    new OptimizeCSSAssetsPlugin({
+      cssProcessor: cssnano,
+      cssProcessorOptions: options,
+      canPrint: false,
+    }),
+  ],
+});
+
+exports.minifyJavaScript = () => ({
+  plugins: [
+    new UglifyWebpackPlugin(),
+  ]
+});
+
+exports.attachRevision = () => ({
+  plugins: [
+    new webpack.BannerPlugin({
+      banner: new GitRevisionPlugin().version(),
+    }),
+  ],
+});
+
+exports.clean = (path) => ({
+  plugins: [
+    new CleanWebpackPlugin([path]),
+  ],
+});
 
 exports.devServer = ({ host, port } = {}) => ({
   devServer: {
@@ -18,22 +47,6 @@ exports.devServer = ({ host, port } = {}) => ({
       errors: false,
       warnings: false,
     },
-  },
-});
-
-exports.lintJavaScript = ({ include, exclude, options}) => ({
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        include,
-        exclude,
-        enforce: 'pre',
-        
-        loader: 'eslint-loader',
-        options,
-      },
-    ],
   },
 });
 
@@ -76,20 +89,6 @@ exports.extractCSS = ({ include, exclude, use }) => {
   };
 };
 
-exports.autoprefix = () => ({
-  loader: 'postcss-loader',
-  options: {
-    plugins: () => [require('autoprefixer')()],
-  },
-});
-
-
-exports.purifyCSS = ({ paths }) => ({
-  plugins: [
-    new PurifyCSSPlugin({ paths }),
-  ]
-});
-
 exports.lintCSS = ({ include, exclude }) => ({
   module: {
     rules: [
@@ -98,7 +97,7 @@ exports.lintCSS = ({ include, exclude }) => ({
         include,
         exclude,
         enforce: 'pre',
-        
+
         loader: 'postcss-loader',
         options: {
           plugins: () => ([
@@ -110,6 +109,37 @@ exports.lintCSS = ({ include, exclude }) => ({
   },
 });
 
+exports.lintJavaScript = ({ include, exclude, options}) => ({
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        include,
+        exclude,
+        enforce: 'pre',
+        
+        loader: 'eslint-loader',
+        options,
+      },
+    ],
+  },
+});
+
+
+exports.autoprefix = () => ({
+  loader: 'postcss-loader',
+  options: {
+    plugins: () => [require('autoprefixer')()],
+  },
+});
+
+
+exports.purifyCSS = ({ paths }) => ({
+  plugins: [
+    new PurifyCSSPlugin({ paths })
+  ],
+});
+
 exports.loadImages = ({ include, exclude, options } = {}) => ({
   module: {
     rules: [
@@ -117,23 +147,9 @@ exports.loadImages = ({ include, exclude, options } = {}) => ({
         test: /\.(png|jpg|svg)$/,
         include,
         exclude,
-    
         use: {
-          loader: 'url-loader',
+          loader: "url-loader",
           options,
-        },
-      },
-      {
-        // Match woff2 in addition to patterns like .woff?v=1.1.1.
-        test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader',
-        options: {
-          // Limit at 50k. Above that it emits separate files
-          limit: 50000,
-          // url-loader sets mimetype if it's passed.
-          // Without this it derives it from the file extension mimetype: 'application/font-woff',
-          // Output below fonts directory
-          name: './fonts/[name].[ext]',
         },
       },
     ],
@@ -178,7 +194,6 @@ exports.loadJavascript = ({ include, exclude }) => ({
   },
 });
 
-
 exports.generateSourceMaps = ({ type }) => ({
   devtool: type,
 });
@@ -189,35 +204,14 @@ exports.extractBundles = (bundles) => ({
   )),
 });
 
-
-exports.clean = (path) => ({
-  plugins: [
-    new CleanWebpackPlugin([path]),
-  ],
-});
-
-exports.attachRevision = () => ({
-  plugins: [
-    new webpack.BannerPlugin({
-      banner: new GitRevisionPlugin().version(),
-    }),
-  ],
-});
-
-exports.minifyJavaScript = () => ({
-  plugins: [
-    new UglifyWebpackPlugin(),
-  ]
-});
-
-exports.minifyCSS = ({ options }) => ({
-  plugins: [
-    new OptimizeCSSAssetsPlugin({
-      cssProcessor: cssnano,
-      cssProcessorOptions: options,
-      canPrint: false,
-    }),
-  ],
-});
-
+exports.setFreeVariable = (key, value) => {
+  const env = {};
+  env[key] = JSON.stringify(value);
+  
+  return {
+    plugins: [
+      new webpack.DefinePlugin(env),
+    ]
+  };
+};
 

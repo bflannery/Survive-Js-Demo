@@ -1,4 +1,4 @@
-
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
@@ -33,8 +33,8 @@ const commonConfig = merge([
 		new DashboardPlugin()
 	],
 },
-  parts.lintJavaScript({ include: PATHS.app }),
-  parts.lintCSS({ include: PATHS.app }),
+  // parts.lintJavaScript({ include: PATHS.app }),
+  // parts.lintCSS({ include: PATHS.app }),
   parts.loadFonts({
     options: {
       name: '[name].[ext]',
@@ -90,6 +90,10 @@ const productionConfig = merge([
       name: '[name].[ext]',
     },
   }),
+  parts.setFreeVariable(
+    'process.env.NODE_ENV',
+    'production'
+  )
 ]);
 
 //
