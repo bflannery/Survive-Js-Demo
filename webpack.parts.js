@@ -33,13 +33,13 @@ exports.attachRevision = () => ({
 
 exports.clean = (path) => ({
   plugins: [
-    new CleanWebpackPlugin([path]),
+    new CleanWebpackPlugin([path])
   ],
 });
 
 exports.devServer = ({ host, port } = {}) => ({
   devServer: {
-    historyApiFallback: true,
+    // historyApiFallback: true,
     stats: 'errors-only',
     host, //Defaults to `localhost`
     port, //Defaults to 8080
@@ -68,7 +68,7 @@ exports.extractCSS = ({ include, exclude, use }) => {
 // Output extracted CSS to a file
   const plugin = new ExtractTextPlugin({
     // allChunks: true,
-    filename: '[name].css',
+    filename: '[name].[contenthash:8].css',
   });
   return {
     module: {
@@ -83,11 +83,18 @@ exports.extractCSS = ({ include, exclude, use }) => {
             fallback: 'style-loader',
           }),
         },
-      ]
+      ],
     },
     plugins: [plugin],
   };
 };
+
+exports.autoprefix = () => ({
+  loader: 'postcss-loader',
+  options: {
+    plugins: () => [require('autoprefixer')()],
+  },
+});
 
 exports.lintCSS = ({ include, exclude }) => ({
   module: {
@@ -124,15 +131,6 @@ exports.lintJavaScript = ({ include, exclude, options}) => ({
     ],
   },
 });
-
-
-exports.autoprefix = () => ({
-  loader: 'postcss-loader',
-  options: {
-    plugins: () => [require('autoprefixer')()],
-  },
-});
-
 
 exports.purifyCSS = ({ paths }) => ({
   plugins: [
@@ -198,10 +196,10 @@ exports.generateSourceMaps = ({ type }) => ({
   devtool: type,
 });
 
-exports.extractBundles = (bundles) => ({
-  plugins: bundles.map((bundle) => (
-    new webpack.optimize.CommonsChunkPlugin(bundle)
-  )),
+exports.extractBundles = bundles => ({
+  plugins: bundles.map(
+    bundle => new webpack.optimize.CommonsChunkPlugin(bundle)
+  ),
 });
 
 exports.setFreeVariable = (key, value) => {

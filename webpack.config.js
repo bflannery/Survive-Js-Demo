@@ -30,14 +30,15 @@ const commonConfig = merge([
 		new HtmlWebpackPlugin({
 			title: 'Webpack demo',
 		}),
-		new DashboardPlugin()
+		new DashboardPlugin(),
+    new webpack.NamedModulesPlugin(),
 	],
 },
   // parts.lintJavaScript({ include: PATHS.app }),
   // parts.lintCSS({ include: PATHS.app }),
   parts.loadFonts({
     options: {
-      name: '[name].[ext]',
+      name: '[name].[hash:8].[ext]',
     },
   }),
   parts.loadJavascript({ include: PATHS.app }),
@@ -53,6 +54,11 @@ const productionConfig = merge([
       maxEntrypointSize: 100000, // in bytes
       maxAssetSize: 450000, // in bytes
     },
+    output: {
+      chunkFilename: '[name].[chunkhash:8].js',
+      filename: '[name].[chunkhash:8].js'
+    },
+    // plugins: [new webpack.NamedModulesPlugin()],
   },
   parts.clean(PATHS.build),
   parts.minifyJavaScript(),
@@ -60,9 +66,9 @@ const productionConfig = merge([
     options: {
       discardComments: {
         removeAll: true,
+        safe: true,
       },
-      safe: true,
-    }
+    },
   }),
   parts.extractBundles([
     {
@@ -79,6 +85,7 @@ const productionConfig = merge([
     type: 'source-map'
   }),
   parts.extractCSS({
+    // use: 'css-loader',
     use: ['css-loader', parts.autoprefix()],
   }),
   parts.purifyCSS({
@@ -87,7 +94,7 @@ const productionConfig = merge([
   parts.loadImages({
     options: {
       limit: 25000,
-      name: '[name].[ext]',
+      name: '[name].[hash:8].[ext]',
     },
   }),
   parts.setFreeVariable(
