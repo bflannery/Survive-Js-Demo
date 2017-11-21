@@ -1,0 +1,264 @@
+{
+  "html-webpack-plugin for \"index.html\"": [
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/html-webpack-plugin/lib/loader.js!node_modules/html-webpack-plugin/default_index.ejs": "./node_modules/html-webpack-plugin/lib/loader.js!./node_modules/html-webpack-plugin/default_index.ejs",
+          "node_modules/lodash/lodash.js": "./node_modules/lodash/lodash.js",
+          "node_modules/webpack/buildin/global.js": "./node_modules/webpack/buildin/global.js",
+          "node_modules/webpack/buildin/module.js": "./node_modules/webpack/buildin/module.js"
+        },
+        "usedIds": {
+          "./node_modules/html-webpack-plugin/lib/loader.js!./node_modules/html-webpack-plugin/default_index.ejs": "./node_modules/html-webpack-plugin/lib/loader.js!./node_modules/html-webpack-plugin/default_index.ejs",
+          "./node_modules/lodash/lodash.js": "./node_modules/lodash/lodash.js",
+          "./node_modules/webpack/buildin/global.js": "./node_modules/webpack/buildin/global.js",
+          "./node_modules/webpack/buildin/module.js": "./node_modules/webpack/buildin/module.js"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/webpack/buildin/module.js": "3IRH",
+          "node_modules/webpack/buildin/global.js": "DuR2",
+          "node_modules/lodash/lodash.js": "M4fF",
+          "node_modules/html-webpack-plugin/lib/loader.js!node_modules/html-webpack-plugin/default_index.ejs": "a/t9"
+        },
+        "usedIds": {
+          "3IRH": "3IRH",
+          "DuR2": "DuR2",
+          "M4fF": "M4fF",
+          "a/t9": "a/t9"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    }
+  ],
+  "extract-text-webpack-plugin": [
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/font-awesome/css/font-awesome.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/font-awesome/css/font-awesome.css",
+          "node_modules/css-loader/lib/css-base.js": "./node_modules/css-loader/lib/css-base.js",
+          "node_modules/file-loader/dist/cjs.js??ref--0!node_modules/font-awesome/fonts/fontawesome-webfont.eot": "./node_modules/font-awesome/fonts/fontawesome-webfont.eot",
+          "node_modules/file-loader/dist/cjs.js??ref--0!node_modules/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0": "./node_modules/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0",
+          "node_modules/url-loader/index.js??ref--3!node_modules/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0": "./node_modules/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0",
+          "node_modules/file-loader/dist/cjs.js??ref--0!node_modules/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0": "./node_modules/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0",
+          "node_modules/file-loader/dist/cjs.js??ref--0!node_modules/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0": "./node_modules/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0",
+          "node_modules/file-loader/dist/cjs.js??ref--0!node_modules/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0": "./node_modules/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0"
+        },
+        "usedIds": {
+          "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/font-awesome/css/font-awesome.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/font-awesome/css/font-awesome.css",
+          "./node_modules/css-loader/lib/css-base.js": "./node_modules/css-loader/lib/css-base.js",
+          "./node_modules/font-awesome/fonts/fontawesome-webfont.eot": "./node_modules/font-awesome/fonts/fontawesome-webfont.eot",
+          "./node_modules/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0": "./node_modules/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0",
+          "./node_modules/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0": "./node_modules/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0",
+          "./node_modules/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0": "./node_modules/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0",
+          "./node_modules/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0": "./node_modules/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0",
+          "./node_modules/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0": "./node_modules/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/purecss/build/pure-min.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/purecss/build/pure-min.css",
+          "node_modules/css-loader/lib/css-base.js": "./node_modules/css-loader/lib/css-base.js"
+        },
+        "usedIds": {
+          "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/purecss/build/pure-min.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/purecss/build/pure-min.css",
+          "./node_modules/css-loader/lib/css-base.js": "./node_modules/css-loader/lib/css-base.js"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!app/main.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./app/main.css",
+          "node_modules/css-loader/lib/css-base.js": "./node_modules/css-loader/lib/css-base.js"
+        },
+        "usedIds": {
+          "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./app/main.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./app/main.css",
+          "./node_modules/css-loader/lib/css-base.js": "./node_modules/css-loader/lib/css-base.js"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/url-loader/index.js??ref--3!node_modules/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0": "Fqd/",
+          "node_modules/file-loader/dist/cjs.js??ref--0!node_modules/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0": "IMLV",
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/font-awesome/css/font-awesome.css": "YXEp",
+          "node_modules/file-loader/dist/cjs.js??ref--0!node_modules/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0": "cEaC",
+          "node_modules/file-loader/dist/cjs.js??ref--0!node_modules/font-awesome/fonts/fontawesome-webfont.eot": "cmUn",
+          "node_modules/file-loader/dist/cjs.js??ref--0!node_modules/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0": "jNsU",
+          "node_modules/file-loader/dist/cjs.js??ref--0!node_modules/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0": "of+2"
+        },
+        "usedIds": {
+          "FZ+f": "FZ+f",
+          "Fqd/": "Fqd/",
+          "IMLV": "IMLV",
+          "YXEp": "YXEp",
+          "cEaC": "cEaC",
+          "cmUn": "cmUn",
+          "jNsU": "jNsU",
+          "of+2": "of+2"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/purecss/build/pure-min.css": "gFVG"
+        },
+        "usedIds": {
+          "FZ+f": "FZ+f",
+          "gFVG": "gFVG"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!app/main.css": "b2lo"
+        },
+        "usedIds": {
+          "FZ+f": "FZ+f",
+          "b2lo": "b2lo"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    }
+  ],
+  "modules": {
+    "byIdentifier": {
+      "node_modules/babel-loader/lib/index.js??ref--1!app/component.js": "./app/component.js",
+      "node_modules/babel-loader/lib/index.js??ref--1!app/index.js": "./app/index.js",
+      "node_modules/extract-text-webpack-plugin/loader.js??ref--2-0!node_modules/style-loader/index.js!node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js??ref--2-3!app/lazy.css": "./app/lazy.css",
+      "node_modules/babel-loader/lib/index.js??ref--1!app/lazy.js": "./app/lazy.js",
+      "node_modules/extract-text-webpack-plugin/loader.js??ref--2-0!node_modules/style-loader/index.js!node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js??ref--2-3!app/main.css": "./app/main.css",
+      "node_modules/babel-loader/lib/index.js??ref--1!app/shake.js": "./app/shake.js",
+      "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!app/lazy.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./app/lazy.css",
+      "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{}!app/main.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{}!./app/main.css",
+      "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{}!node_modules/font-awesome/css/font-awesome.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{}!./node_modules/font-awesome/css/font-awesome.css",
+      "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{}!node_modules/purecss/build/pure-min.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{}!./node_modules/purecss/build/pure-min.css",
+      "node_modules/css-loader/lib/css-base.js": "./node_modules/css-loader/lib/css-base.js",
+      "node_modules/fbjs/lib/emptyFunction.js": "./node_modules/fbjs/lib/emptyFunction.js",
+      "node_modules/fbjs/lib/emptyObject.js": "./node_modules/fbjs/lib/emptyObject.js",
+      "node_modules/extract-text-webpack-plugin/loader.js??ref--2-0!node_modules/style-loader/index.js!node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js??ref--2-3!node_modules/font-awesome/css/font-awesome.css": "./node_modules/font-awesome/css/font-awesome.css",
+      "node_modules/file-loader/dist/cjs.js??ref--0!node_modules/font-awesome/fonts/fontawesome-webfont.eot": "./node_modules/font-awesome/fonts/fontawesome-webfont.eot",
+      "node_modules/file-loader/dist/cjs.js??ref--0!node_modules/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0": "./node_modules/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0",
+      "node_modules/url-loader/index.js??ref--3!node_modules/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0": "./node_modules/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0",
+      "node_modules/file-loader/dist/cjs.js??ref--0!node_modules/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0": "./node_modules/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0",
+      "node_modules/file-loader/dist/cjs.js??ref--0!node_modules/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0": "./node_modules/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0",
+      "node_modules/file-loader/dist/cjs.js??ref--0!node_modules/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0": "./node_modules/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0",
+      "node_modules/object-assign/index.js": "./node_modules/object-assign/index.js",
+      "node_modules/extract-text-webpack-plugin/loader.js??ref--2-0!node_modules/style-loader/index.js!node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js??ref--2-3!node_modules/purecss/build/pure-min.css": "./node_modules/purecss/build/pure-min.css",
+      "node_modules/react/cjs/react.production.min.js": "./node_modules/react/cjs/react.production.min.js",
+      "node_modules/react/index.js": "./node_modules/react/index.js",
+      "node_modules/style-loader/lib/addStyles.js": "./node_modules/style-loader/lib/addStyles.js",
+      "node_modules/style-loader/lib/urls.js": "./node_modules/style-loader/lib/urls.js"
+    },
+    "usedIds": {
+      "./app/component.js": "./app/component.js",
+      "./app/index.js": "./app/index.js",
+      "./app/lazy.css": "./app/lazy.css",
+      "./app/lazy.js": "./app/lazy.js",
+      "./app/main.css": "./app/main.css",
+      "./app/shake.js": "./app/shake.js",
+      "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./app/lazy.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./app/lazy.css",
+      "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{}!./app/main.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{}!./app/main.css",
+      "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{}!./node_modules/font-awesome/css/font-awesome.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{}!./node_modules/font-awesome/css/font-awesome.css",
+      "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{}!./node_modules/purecss/build/pure-min.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{}!./node_modules/purecss/build/pure-min.css",
+      "./node_modules/css-loader/lib/css-base.js": "./node_modules/css-loader/lib/css-base.js",
+      "./node_modules/fbjs/lib/emptyFunction.js": "./node_modules/fbjs/lib/emptyFunction.js",
+      "./node_modules/fbjs/lib/emptyObject.js": "./node_modules/fbjs/lib/emptyObject.js",
+      "./node_modules/font-awesome/css/font-awesome.css": "./node_modules/font-awesome/css/font-awesome.css",
+      "./node_modules/font-awesome/fonts/fontawesome-webfont.eot": "./node_modules/font-awesome/fonts/fontawesome-webfont.eot",
+      "./node_modules/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0": "./node_modules/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0",
+      "./node_modules/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0": "./node_modules/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0",
+      "./node_modules/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0": "./node_modules/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0",
+      "./node_modules/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0": "./node_modules/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0",
+      "./node_modules/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0": "./node_modules/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0",
+      "./node_modules/object-assign/index.js": "./node_modules/object-assign/index.js",
+      "./node_modules/purecss/build/pure-min.css": "./node_modules/purecss/build/pure-min.css",
+      "./node_modules/react/cjs/react.production.min.js": "./node_modules/react/cjs/react.production.min.js",
+      "./node_modules/react/index.js": "./node_modules/react/index.js",
+      "./node_modules/style-loader/lib/addStyles.js": "./node_modules/style-loader/lib/addStyles.js",
+      "./node_modules/style-loader/lib/urls.js": "./node_modules/style-loader/lib/urls.js"
+    }
+  },
+  "chunks": {
+    "byName": {
+      "vendor": 1,
+      "app": 2,
+      "manifest": 3
+    },
+    "byBlocks": {
+      "node_modules/babel-loader/lib/index.js??ref--1!app/component.js:0/0": 0
+    },
+    "usedIds": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3
+    }
+  }
+}

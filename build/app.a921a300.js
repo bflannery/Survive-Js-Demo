@@ -1,5 +1,5 @@
-/*! 3c196ad */
-webpackJsonp([1],{"./app/component.js":/*!**************************!*\
+/*! 951abc7 */
+webpackJsonp([2,3],{"./app/component.js":/*!**************************!*\
   !*** ./app/component.js ***!
   \**************************/
 function(n,e,o){"use strict";e.a=function(){var n=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"Hello world",e=document.createElement("div");return e.className="fa fa-hand-spock-o fa-1g",e.innerHTML=n,e.onclick=function(){o.e(0).then(o.bind(null,/*! ./lazy */"./app/lazy.js")).then(function(n){e.textContent=n.default}).catch(function(n){console.error(n)})},e}},"./app/index.js":/*!**********************!*\
@@ -18,4 +18,4 @@ function(n,e){},"./node_modules/purecss/build/pure-min.css":/*!*****************
   !*** ./~/purecss/build/pure-min.css ***!
   \**************************************/
 function(n,e){}},["./app/index.js"]);
-//# sourceMappingURL=app.021f2e13.js.map
+//# sourceMappingURL=app.a921a300.js.map

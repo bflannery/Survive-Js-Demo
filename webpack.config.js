@@ -32,6 +32,7 @@ const commonConfig = merge([
 		}),
 		new DashboardPlugin(),
     new webpack.NamedModulesPlugin(),
+    // new webpack.HashedModuleIdsPlugin(),
 	],
 },
   // parts.lintJavaScript({ include: PATHS.app }),
@@ -59,6 +60,7 @@ const productionConfig = merge([
       filename: '[name].[chunkhash:8].js'
     },
     // plugins: [new webpack.NamedModulesPlugin()],
+    recordsPath: path.join(__dirname, 'records.json'),
   },
   parts.clean(PATHS.build),
   parts.minifyJavaScript(),
@@ -78,6 +80,10 @@ const productionConfig = merge([
         resource.indexOf('node_modules') >= 0 &&
         resource.match(/\.js$/)
       ),
+    },
+    {
+      name: 'manifest',
+      minChunks: Infinity
     },
   ]),
   parts.attachRevision(),
