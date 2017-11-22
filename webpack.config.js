@@ -122,11 +122,6 @@ const developmentConfig = merge([
   parts.devServer({
     host: process.env.HOST, // Defaults to `localhost`
     port: process.env.PORT, // Defaults to 8080
-    // overlay: true is equivalent
-    // overlay: {
-    // 	errors: true,
-    // 	warnings: true,
-    // }
 		}),
   parts.loadCSS(),
   parts.loadImages(),
