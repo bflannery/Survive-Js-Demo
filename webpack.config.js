@@ -22,6 +22,7 @@ const commonConfig = merge([
 	entry: {
 		app: PATHS.app,
 	},
+  target: 'web',
 	output: {
 		path: PATHS.build,
 		filename: '[name].js',
