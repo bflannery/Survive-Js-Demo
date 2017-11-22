@@ -171,7 +171,7 @@ exports.loadFonts = ({ include, exclude, options} = {}) => ({
   },
 });
 
-exports.loadJavascript = ({ include, exclude }) => ({
+exports.loadJavaScript = ({ include, exclude }) => ({
   module: {
     rules: [
       {

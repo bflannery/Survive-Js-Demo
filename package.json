@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "stats": "webpack --env production --profile --json > stats.json",
     "lint:style": "stylelint app/**/*.css",
+    "lint:js": "eslint app/ webpack.*.ja --cache",
+    "prebuild:lib": "npm run lint:js && rimraf dist",
+    "stats": "webpack --env production --profile --json > stats.json",
     "start": "webpack-dashboard -- nodemon --watch webpack.config.js --exec \"webpack-dev-server --env development\"",
     "build": "webpack --env production",
-    "lint:js": "eslint app/ webpack.*.ja --cache"
+    "build:lib": "webpack --config webpack.lib.js",
   },
   "keywords": [],
   "author": "",
@@ -36,6 +38,7 @@
     "postcss-loader": "^2.0.8",
     "purify-css": "^1.2.5",
     "purifycss-webpack": "^0.7.0",
+    "rimraf": "^2.6.2",
     "style-loader": "^0.19.0",
     "stylelint": "^8.2.0",
     "uglifyjs-webpack-plugin": "^1.0.1",

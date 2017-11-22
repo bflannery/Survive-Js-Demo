@@ -43,7 +43,7 @@ const commonConfig = merge([
       name: '[name].[hash:8].[ext]',
     },
   }),
-  parts.loadJavascript({ include: PATHS.app }),
+  parts.loadJavaScript({ include: PATHS.app }),
 ]);
 
 //
