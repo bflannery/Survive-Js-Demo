@@ -31,7 +31,6 @@ const commonConfig = merge([
 		new HtmlWebpackPlugin({
 			title: 'Webpack demo',
 		}),
-		new DashboardPlugin(),
     new webpack.NamedModulesPlugin(),
     // new webpack.HashedModuleIdsPlugin(),
 	],
@@ -118,6 +117,9 @@ const developmentConfig = merge([
     output: {
       devtoolModuleFilenameTemplate: 'webpack:///[absolute-resource-path]',
     },
+    plugins: [
+      new DashboardPlugin(),
+    ]
   },
   parts.generateSourceMaps({ type: 'cheap-module-eval-source-map' }),
   parts.devServer({
